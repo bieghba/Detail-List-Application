@@ -84,14 +84,31 @@
         "viewPath": "student.com.sap.training.ux402.listdetail.ux402listdetail.view",
         "controlAggregation": "beginColumnPages",
         "controlId": "layout",
-        "clearControlAggregation": false
+        "bypassed": {
+          "target": [
+            "masterlist",
+            "notFound"
+          ]
+        }
       },
       "routes": [
         {
-          "name": "RouteList",
-          "pattern": ":?query:",
+          "name": "masterlist",
+          "pattern": "",
+          "titleTarget": "",
+          "greedy": false,
           "target": [
-            "TargetList"
+            "masterlist"
+          ]
+        },
+        {
+          "name": "carrierdetails",
+          "pattern": "Carriers/{objectId}",
+          "titleTarget": "",
+          "greedy": false,
+          "target": [
+            "masterlist",
+            "carrierdetails"
           ]
         }
       ],
@@ -99,9 +116,34 @@
         "TargetList": {
           "viewType": "XML",
           "transition": "slide",
-          "clearControlAggregation": false,
-          "viewId": "List",
-          "viewName": "List"
+          "ControlAggregation": "beginColumnPages",
+          "viewId": "list",
+          "viewName": "List",
+          "viewLevel": 1
+        },
+        "carrierdetails": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewLevel": 2,
+          "controlAggregation": "midColumnPages",
+          "viewName": "Detail",
+          "viewId": "carrierdetails"
+        },
+        "notFound": {
+          "viewType": "XML",
+          "transition": "slide",
+          "controlAggregation": "midColumnPages",
+          "clearControlAggregation": true,
+          "viewName": "NotFound",
+          "viewId": "notFound"
+        },
+        "detailObjectNotFound": {
+          "viewType": "XML",
+          "transition": "slide",
+          "controlAggregation": "midColumnPages",
+          "clearControlAggregation": true,
+          "viewName": "DetailObjectNotFound",
+          "viewId": "detailObjectNotFound"
         }
       }
     },

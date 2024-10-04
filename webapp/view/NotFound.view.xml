@@ -1,8 +1,12 @@
-<mvc:View controllerName="student.com.sap.training.ux402.listdetail.ux402listdetail.controller.Notfound"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-        <content />
-    </Page>
-</mvc:View>
 
+<mvc:View controllerName="student##.com.sap.training.ux402.listdetail.ux402listdetail.controller.NotFound"
+ xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+ xmlns="sap.m">
+ <MessagePage
+ id="notFoundMessagePage"
+ title="{i18n>notFoundTitle}"
+ text="{i18n>notFoundText}"
+ icon="sap-icon://document"
+ >
+ </MessagePage>
+</mvc:View>
